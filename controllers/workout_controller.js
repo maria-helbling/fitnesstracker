@@ -17,13 +17,11 @@ router.get('/api/workout', (req, res)=>{
 
 //post new exercise
 router.post('/api/workout', (req, res)=>{
-    db.Workout.create({ name: "Today's Workout" })
+    db.Workout.create({ name: req.name })
   .then(dbWorkout => {
-    console.log(dbWorkout);
     res.json(dbWorkout)
   })
   .catch(({message}) => {
-    console.log(message);
     res.status(500).end();
   });
 })

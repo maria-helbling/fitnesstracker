@@ -6,6 +6,7 @@ const ExerciseSchema = new Schema({
   name: {
     type: String,
     trim: true,
+    unique: false,
     required: "Exercise must have a name"
   },
   type: {
