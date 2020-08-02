@@ -4,9 +4,12 @@ const Schema = mongoose.Schema;
 
 const WorkoutSchema = new Schema({
   name: {
-    type: String,
-    unique: true
+    type: String
   },
+  day: { 
+      type: Date, 
+      default: Date.now,
+    unique:true },
   exercises: [
     {
       type: Schema.Types.ObjectId,

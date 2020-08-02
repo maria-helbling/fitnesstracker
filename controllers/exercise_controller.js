@@ -4,8 +4,11 @@ const db = require("../models");
 
 //get route to get all exercises
 
-//post new exercise
-router.post('/api/exercise', (req, res)=>{
+
+//get route to get all exercises from given workout
+
+//post new exercise relative to particular workout
+router.post('/api/exercise/:workoutid', (req, res)=>{
 
 })
 
