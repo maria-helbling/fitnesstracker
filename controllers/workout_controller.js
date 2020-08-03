@@ -3,8 +3,8 @@ const router = express.Router();
 const db = require("../models");
 
 //get route to get current workout
-router.get('/api/workout', (req, res)=>{
-    db.Workout.find({})
+router.get('/api/:workout', (req, res)=>{
+    db.Workout.find({_id:req.params.workout})
     .populate("exercises")
     .then(dbWorkout => {
         res.json(dbWorkout)
@@ -17,7 +17,7 @@ router.get('/api/workout', (req, res)=>{
 
 //post new exercise
 router.post('/api/workout', (req, res)=>{
-    db.Workout.create({ name: req.name })
+    db.Workout.create({ name: req.body.name })
   .then(dbWorkout => {
     res.json(dbWorkout)
   })

@@ -1,0 +1,119 @@
+<div class="top-bar">
+    <div class="top-bar-left">
+        <ul class="menu">
+            <li>
+                <a href="/stats">Statistics page</a>
+            </li>
+        </ul>
+    </div>
+    <div class="top-bar-right">
+        <ul class="menu">
+            <li class="menu-text">
+                <h1 class="text-center">Fitness Tracker</h1>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<main class="grid-container">
+    <div class="grid-x grid-margin-x">
+        <div class="cell medium-6">
+            <div class="grid-x">
+                <div class="cell text-center" id="workoutDetails">
+                    <h2 id='name'></h2>
+                    <p><strong>Date: </strong><span id="day"></span></p>
+                    <p><strong>Total Duration: </strong><span id="duration">0</span></p>
+                    <p><strong>Exercise count: </strong><span id="count">0</span></p>
+                    <p><strong>Total Weight: </strong><span id="weight">0</span></p>
+                    <p><strong>Number of Sets: </strong><span id="sets">0</span></p>
+                    <p><strong>Number of Reps: </strong><span id="reps">0</span></p>
+                    <p><strong>Total distance: </strong><span id="distance">0</span></p>
+                </div>
+                <div class="cell text-center" id="detailButtons">
+                    <button class='button secondary' data-id='' id="newExercise" data-open='exerciseModal'>Add Exercise</button>
+                    <button class='button secondary' data-open='workoutModal' id="newWorkout">New Workout</button>
+                </div>
+            </div>
+        </div>
+        <div class="cell medium-6 text-center" id="latestWorkouts">
+            <h2>Latest workouts</h2>
+            {{#each workout}}
+            <button class="button secondary workouts expanded" data-id="{{_id}}">{{this.name}} from {{this.day}}</button>
+            {{/each}}
+        </div>
+    </div>
+
+    <div class="modal" id="exerciseModal">
+        <div class="modal-dialog">
+            <header class="modal-header text-right">
+                <button class="close-modal" data-close aria-label="Close modal" type="button">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </header>
+            <section class="modal-content">
+                <h4>Enter your exercise</h4>
+                <div class="cell">
+                    <input type="text" id="name" placeholder="Exercise name">
+                    <label>Exercise type
+                        <select>
+                            <option value="cardio">Cardio</option>
+                            <option value="strength">Strength</option>
+                        </select>
+                    </label>
+                </div>
+                <form>
+                    <div class="grid-container">
+                        <div class="grid-x grid-padding-x">
+                            <div class="cell medium-6">
+                                <label for="duration">Duration</label>
+                                <input type="number" name="duration" id="duration" value='1' min="0">
+                            </div>
+                            <div class="cell medium-6 cardioInput">
+                                <label for="distance">Distance</label>
+                                <input type="number" name="distance" id="distance" value="1" min="0">
+                            </div>
+                            <div class="cell medium-6 strengthInput">
+                                <label for="weight">Weight</label>
+                                <input type="number" name="weight" id="weight" value="1" min="0">
+                            </div>
+                            <div class="cell medium-6 strengthInput">
+                                <label for="sets">Sets</label>
+                                <input type="number" name="sets" id="sets" value='1' min="0">
+                            </div>
+                            <div class="cell medium-6 strengthInput">
+                                <label for="reps">Reps</label>
+                                <input type="number" name="reps" id="reps" value="1" min="0">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </section>
+            <footer>
+                <button data-id='' type="submit" data-close class="button expanded secondary" id="exerciseSubmit">Add exercise</button>
+            </footer>
+        </div>
+    </div>
+    <div class="modal" id="workoutModal">
+        <div class="modal-dialog">
+            <header class="modal-header text-right">
+                <button class="close-modal" data-close aria-label="Close modal" type="button">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </header>
+            <section class="modal-content">
+                <h4>New Workout</h4>
+                <div class="cell">
+                    <input type="text" id="newWorkoutName" placeholder="Workout name">
+                </div>
+            </section>
+            <footer>
+                <button type="submit" data-close class="button secondary expanded" id="workoutSubmit">Add workout</button>
+            </footer>
+        </div>
+    </div>
+
+</main>
+<footer class="text-center">
+    <h4>Thank you, come again!</h4>
+    <p>&copy; 2020 <a href="https://github.com/maria-helbling" target="blank"> Maria Helbling</a></p>
+</footer>

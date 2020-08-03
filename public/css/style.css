@@ -1,0 +1,56 @@
+body {
+    background-color: lightgray;
+}
+.top-bar, ul.menu, li.menu-text {
+    background-color: darkgray;
+    color: ivory;
+}
+main {
+    padding-top: 2rem;
+}
+ #detailButtons, #latestWorkouts,  #workoutDetails {
+     padding: 0.5rem;
+     background-color: darkgray;
+     box-shadow: darkgray;
+     color: gold
+ }
+.modal { 
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background: darkgray;
+    visibility: hidden;
+    opacity: 0.5;
+    transition: all 0.35s ease-in;
+  }
+  .modal-dialog {
+    position: relative;
+    max-width: 800px;
+    max-height: 90vh;
+    border-radius: 5px;
+    background: ivory;
+    overflow: auto;
+    cursor: default;
+    padding: 1rem;
+  }
+   
+  .can-see {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .strengthInput {
+      display:none;
+  }
+
+  footer {
+      background-color: darkgray;
+      color: ivory;
+      margin-top: 2rem;
+  }
