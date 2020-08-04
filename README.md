@@ -17,9 +17,9 @@ It is an app making use of Express, MongoDB, Mongoose schema, handlebars for ren
 ## Installation
   
 Deployed site can be [seen here](https://whispering-caverns-44858.herokuapp.com/). To install:
-    git clone https://github.com/maria-helbling/fitnesstracker.git
-    npm install
-    npm start.
+     git clone https://github.com/maria-helbling/fitnesstracker.git
+     npm install
+     npm start
   
 ## Usage
   
