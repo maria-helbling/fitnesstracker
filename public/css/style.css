@@ -54,3 +54,7 @@ main {
       color: ivory;
       margin-top: 2rem;
   }
+
+  footer p {
+      margin-bottom: 0;
+  }
