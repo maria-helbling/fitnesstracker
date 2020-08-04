@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const db = require("../models");
+const moment = require('moment')
 
 router.get('/', (req, res)=>{
     db.Workout.find({})
@@ -9,6 +10,7 @@ router.get('/', (req, res)=>{
     .lean()
     .then(data=>{
         console.log(data)
+        data.map(element=>element.day = moment(element.day).format('MMMM Do YYYY'))
         res.render('index',{workout:data})
     })
     .catch(err=>{

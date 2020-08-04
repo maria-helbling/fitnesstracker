@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const moment = require('moment')
 
 const Schema = mongoose.Schema;
 
@@ -8,8 +9,7 @@ const WorkoutSchema = new Schema({
   },
   day: { 
       type: Date, 
-      default: Date.now,
-    unique:true },
+    unique:false},
   exercises: [
     {
       type: Schema.Types.ObjectId,
